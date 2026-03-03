@@ -81,17 +81,97 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dgvClientes.CurrentRow == null) return;
+            if (dgvClientes.SelectedRows.Count > 0)
+            {
+                FrmRegistroClientes frm = new FrmRegistroClientes();
 
-            FrmRegistroClientes frm = new FrmRegistroClientes();
+                // Pasamos el ID y los datos
+                frm.IdClienteSeleccionado = Convert.ToInt32(dgvClientes.CurrentRow.Cells["IdCliente"].Value); // Verifica que el nombre de la columna sea "IdCliente" o "Id"
 
-            frm.IdCliente = Convert.ToInt32(
-                dgvClientes.CurrentRow.Cells[0].Value);
+                frm.CargarDatos(
+                    dgvClientes.CurrentRow.Cells["NombreCompleto"].Value.ToString(),
+                    dgvClientes.CurrentRow.Cells["Documento"].Value.ToString(),
+                    dgvClientes.CurrentRow.Cells["Direccion"].Value.ToString(),
+                    dgvClientes.CurrentRow.Cells["Telefono"].Value.ToString(),
+                    dgvClientes.CurrentRow.Cells["Email"].Value.ToString()
+                );
 
-            frm.ShowDialog();
-            CargarClientes();
+                frm.ShowDialog();
+                CargarClientes(); 
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una fila completa.");
+            }
         }
 
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            // Si el usuario borra todo, cargamos todos los clientes
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                CargarClientes();
+            }
+            else
+            {
+                // Usamos el método de búsqueda de la BLL
+                dgvClientes.DataSource = clienteBLL.BuscarCliente(txtBuscar.Text);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvClientes.SelectedRows.Count > 0)
+            {
+                // 2. Pedir confirmación al usuario (Empatía con el usuario: ¡nadie quiere borrar por error!)
+                DialogResult result = MessageBox.Show(
+                    "¿Está seguro de que desea eliminar al cliente seleccionado?",
+                    "Confirmar Eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // 3. Obtener el ID del cliente seleccionado
+                        // Asegúrate de que el nombre de la columna sea "IdCliente" como en tu DAL
+                        int id = Convert.ToInt32(dgvClientes.CurrentRow.Cells["IdCliente"].Value);
+
+                        // 4. Llamar a la Capa de Negocio para cambiar el estado a false (0)
+                        clienteBLL.CambiarEstado(id, false);
+
+                        // 5. Feedback y actualización
+                        MessageBox.Show("El cliente ha sido eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarClientes(); // Refresca la tabla para que ya no aparezca
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocurrió un error al intentar eliminar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una fila completa de la lista para eliminar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void txtBuscar_TextChanged_1(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text.Length > 2) // Opcional: buscar solo si hay más de 2 letras
+            {
+                dgvClientes.DataSource = clienteBLL.BuscarCliente(txtBuscar.Text);
+            }
+            else if (txtBuscar.Text == "")
+            {
+                CargarClientes(); // Si limpia el buscador, recarga todos
+            }
+        }
     }
 }

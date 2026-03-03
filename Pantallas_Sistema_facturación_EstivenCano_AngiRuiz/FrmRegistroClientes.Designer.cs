@@ -40,7 +40,7 @@
             this.txtDocumento = new System.Windows.Forms.TextBox();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -147,23 +147,23 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // label6
+            // lblTitulo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(88, 34);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(311, 25);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "NUEVO REGISTRO DE CLIENTE";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(88, 34);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(311, 25);
+            this.lblTitulo.TabIndex = 13;
+            this.lblTitulo.Text = "NUEVO REGISTRO DE CLIENTE";
+            this.lblTitulo.Click += new System.EventHandler(this.label6_Click);
             // 
             // FrmRegistroClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 446);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.txtDocumento);
@@ -198,6 +198,6 @@
         private System.Windows.Forms.TextBox txtDocumento;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }

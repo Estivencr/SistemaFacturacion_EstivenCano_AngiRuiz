@@ -1,22 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
     public class CategoriaDAL
     {
-        private string conexion = "TU_CADENA_DE_CONEXION";
+        Conexion conexion;
 
+        public CategoriaDAL()
+        {
+            conexion = new Conexion();
+        }
+
+        // Mostrar solo activas (para ComboBox)
         public DataTable MostrarCategorias()
         {
             DataTable tabla = new DataTable();
 
-            using (SqlConnection cn = new SqlConnection(conexion))
+            using (SqlConnection cn = conexion.CrearConexion())
             {
                 SqlCommand cmd = new SqlCommand(
                     "SELECT IdCategoria, NombreCategoria FROM Categorias WHERE Estado = 1 ORDER BY NombreCategoria",
@@ -29,12 +31,13 @@ namespace CapaDatos
             return tabla;
         }
 
+        // Insertar
         public void InsertarCategoria(string nombre)
         {
-            using (SqlConnection cn = new SqlConnection(conexion))
+            using (SqlConnection cn = conexion.CrearConexion())
             {
                 SqlCommand cmd = new SqlCommand(
-                    "INSERT INTO Categorias (NombreCategoria) VALUES (@Nombre)",
+                    "INSERT INTO Categorias (NombreCategoria, Estado) VALUES (@Nombre, 1)",
                     cn);
 
                 cmd.Parameters.AddWithValue("@Nombre", nombre);
@@ -44,9 +47,10 @@ namespace CapaDatos
             }
         }
 
+        // Actualizar
         public void ActualizarCategoria(int id, string nombre)
         {
-            using (SqlConnection cn = new SqlConnection(conexion))
+            using (SqlConnection cn = conexion.CrearConexion())
             {
                 SqlCommand cmd = new SqlCommand(
                     "UPDATE Categorias SET NombreCategoria = @Nombre WHERE IdCategoria = @Id",
@@ -60,9 +64,10 @@ namespace CapaDatos
             }
         }
 
+        // Validar si existe
         public bool ExisteCategoria(string nombre)
         {
-            using (SqlConnection cn = new SqlConnection(conexion))
+            using (SqlConnection cn = conexion.CrearConexion())
             {
                 SqlCommand cmd = new SqlCommand(
                     "SELECT COUNT(*) FROM Categorias WHERE NombreCategoria = @Nombre AND Estado = 1",
@@ -71,9 +76,26 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@Nombre", nombre);
 
                 cn.Open();
-                int count = (int)cmd.ExecuteScalar();
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
 
                 return count > 0;
+            }
+        }
+
+        // Desactivar (mejor que eliminar)
+        public void CambiarEstado(int id, bool estado)
+        {
+            using (SqlConnection cn = conexion.CrearConexion())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE Categorias SET Estado = @Estado WHERE IdCategoria = @Id",
+                    cn);
+
+                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.Parameters.AddWithValue("@Estado", estado);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
             }
         }
     }

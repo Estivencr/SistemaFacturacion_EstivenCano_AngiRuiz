@@ -41,7 +41,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(249, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 20);
+            this.label1.Size = new System.Drawing.Size(205, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "CATEGORIAS DE PRODUCTOS";
             // 
@@ -69,6 +69,7 @@
             this.btnActualizar.TabIndex = 3;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnSalir
             // 
@@ -82,12 +83,12 @@
             // cboCategoria
             // 
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(54, 163);
+            this.cboCategoria.Location = new System.Drawing.Point(39, 202);
             this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(121, 24);
+            this.cboCategoria.Size = new System.Drawing.Size(364, 24);
             this.cboCategoria.TabIndex = 5;
             // 
-            // frmCategoriaProductos
+            // FrmCategoriaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,7 +99,7 @@
             this.Controls.Add(this.txtNombreCategoria);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "frmCategoriaProductos";
+            this.Name = "FrmCategoriaProductos";
             this.Text = "frmCategoriaProductos";
             this.Load += new System.EventHandler(this.frmCategoriaProductos_Load);
             this.ResumeLayout(false);

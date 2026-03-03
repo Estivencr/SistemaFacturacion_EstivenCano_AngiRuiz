@@ -3,29 +3,43 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|c:\\users\\usuario\\source\\repos\\sistemafacturacion_estivencano_angiruiz\\pantallas_sistema_facturaci\u00F3n_estivencano_angiruiz\\frmregistroclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|solutionrelative:frmregistroclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5846BC16-FEEE-4F8A-979E-C62EEE56A9F7}|..\\CapaNegocio\\CapaNegocio.csproj|c:\\users\\usuario\\source\\repos\\sistemafacturacion_estivencano_angiruiz\\capanegocio\\productobll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\usuario\\source\\repos\\capadatos\\productodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|c:\\users\\usuario\\source\\repos\\sistemafacturacion_estivencano_angiruiz\\pantallas_sistema_facturaci\u00F3n_estivencano_angiruiz\\frmcategoriaproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|solutionrelative:frmcategoriaproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\usuario\\source\\repos\\capadatos\\clientedal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|c:\\users\\usuario\\source\\repos\\sistemafacturacion_estivencano_angiruiz\\pantallas_sistema_facturaci\u00F3n_estivencano_angiruiz\\frmregistroproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|solutionrelative:frmregistroproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\usuario\\source\\repos\\capanegocio\\clientebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|c:\\users\\usuario\\source\\repos\\sistemafacturacion_estivencano_angiruiz\\pantallas_sistema_facturaci\u00F3n_estivencano_angiruiz\\frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|solutionrelative:frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\frmregistroclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|solutionrelative:frmregistroclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|c:\\users\\usuario\\source\\repos\\sistemafacturacion_estivencano_angiruiz\\pantallas_sistema_facturaci\u00F3n_estivencano_angiruiz\\frmregistroproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|solutionrelative:frmregistroproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmClientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|solutionrelative:FrmClientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5846BC16-FEEE-4F8A-979E-C62EEE56A9F7}|..\\CapaNegocio\\CapaNegocio.csproj|c:\\users\\usuario\\source\\repos\\sistemafacturacion_estivencano_angiruiz\\capanegocio\\categoriabll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|solutionrelative:frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|c:\\users\\usuario\\source\\repos\\sistemafacturacion_estivencano_angiruiz\\pantallas_sistema_facturaci\u00F3n_estivencano_angiruiz\\frmcategoriaproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|solutionrelative:frmcategoriaproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DA355AC-AB92-4C56-BBCB-7762EC6FD5F3}|..\\CapaDatos\\CapaDatos.csproj|c:\\users\\usuario\\source\\repos\\sistemafacturacion_estivencano_angiruiz\\capadatos\\categoriadal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DA355AC-AB92-4C56-BBCB-7762EC6FD5F3}|..\\CapaDatos\\CapaDatos.csproj|c:\\users\\usuario\\source\\repos\\sistemafacturacion_estivencano_angiruiz\\capadatos\\productodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DA355AC-AB92-4C56-BBCB-7762EC6FD5F3}|..\\CapaDatos\\CapaDatos.csproj|c:\\users\\usuario\\source\\repos\\sistemafacturacion_estivencano_angiruiz\\capadatos\\clientedal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|c:\\users\\usuario\\source\\repos\\sistemafacturacion_estivencano_angiruiz\\pantallas_sistema_facturaci\u00F3n_estivencano_angiruiz\\frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1683E25E-7F55-4B98-BB3A-F830FB8AB51C}|Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz.csproj|solutionrelative:frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,86 +53,143 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductoDAL.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\CapaDatos\\ProductoDAL.cs",
-              "RelativeDocumentMoniker": "..\\..\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\CapaDatos\\ProductoDAL.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\CapaDatos\\ProductoDAL.cs",
-              "RelativeToolTip": "..\\..\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\CapaDatos\\ProductoDAL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "FrmProductos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmProductos.cs",
+              "RelativeDocumentMoniker": "FrmProductos.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmProductos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FrmProductos.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-02T04:13:57.949Z"
+              "WhenOpened": "2026-03-03T03:14:09.044Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ClienteDAL.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\CapaDatos\\ClienteDAL.cs",
-              "RelativeDocumentMoniker": "..\\..\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\CapaDatos\\ClienteDAL.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\CapaDatos\\ClienteDAL.cs",
-              "RelativeToolTip": "..\\..\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\CapaDatos\\ClienteDAL.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAYwHEAAAAUAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "FrmCategoriaProductos.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmCategoriaProductos.cs",
+              "RelativeDocumentMoniker": "FrmCategoriaProductos.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmCategoriaProductos.cs",
+              "RelativeToolTip": "FrmCategoriaProductos.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAjwDkAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-02T03:32:19.666Z"
+              "WhenOpened": "2026-03-02T23:11:36.282Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmRegistroClientes.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmRegistroClientes.cs",
-              "RelativeDocumentMoniker": "FrmRegistroClientes.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmRegistroClientes.cs",
-              "RelativeToolTip": "FrmRegistroClientes.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAmwCAAAAAAAAAAAAAAAA==",
+              "Title": "ProductoBLL.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\CapaNegocio\\ProductoBLL.cs",
+              "RelativeDocumentMoniker": "..\\CapaNegocio\\ProductoBLL.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\CapaNegocio\\ProductoBLL.cs",
+              "RelativeToolTip": "..\\CapaNegocio\\ProductoBLL.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCIAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-02T03:46:26.369Z",
+              "WhenOpened": "2026-03-02T22:30:50.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CategoriaBLL.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\CapaNegocio\\CategoriaBLL.cs",
+              "RelativeDocumentMoniker": "..\\CapaNegocio\\CategoriaBLL.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\CapaNegocio\\CategoriaBLL.cs",
+              "RelativeToolTip": "..\\CapaNegocio\\CategoriaBLL.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T23:09:34.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmRegistroProducto.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmRegistroProducto.cs",
+              "RelativeDocumentMoniker": "FrmRegistroProducto.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmRegistroProducto.cs",
+              "RelativeToolTip": "FrmRegistroProducto.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAkwDMAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T22:30:20.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "FrmRegistroClientes.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmRegistroClientes.cs",
-              "RelativeDocumentMoniker": "FrmRegistroClientes.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmRegistroClientes.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmRegistroClientes.cs [Dise\u00F1o]",
+              "Title": "FrmRegistroProducto.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmRegistroProducto.cs",
+              "RelativeDocumentMoniker": "FrmRegistroProducto.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmRegistroProducto.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FrmRegistroProducto.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-02T03:46:22.205Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ClienteBLL.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\CapaNegocio\\ClienteBLL.cs",
-              "RelativeDocumentMoniker": "..\\..\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\CapaNegocio\\ClienteBLL.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\CapaNegocio\\ClienteBLL.cs",
-              "RelativeToolTip": "..\\..\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\CapaNegocio\\ClienteBLL.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAkwEkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-02T03:30:46.783Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FrmClientes.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmClientes.cs",
-              "RelativeDocumentMoniker": "FrmClientes.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmClientes.cs",
-              "RelativeToolTip": "FrmClientes.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAuwFwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-02T03:32:38.95Z"
+              "WhenOpened": "2026-03-02T22:30:19.057Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "FrmClientes.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmClientes.cs",
-              "RelativeDocumentMoniker": "FrmClientes.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmClientes.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmClientes.cs [Dise\u00F1o]",
+              "Title": "FrmCategoriaProductos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmCategoriaProductos.cs",
+              "RelativeDocumentMoniker": "FrmCategoriaProductos.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmCategoriaProductos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FrmCategoriaProductos.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-02T03:32:30.664Z"
+              "WhenOpened": "2026-03-02T23:10:27.995Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CategoriaDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\CapaDatos\\CategoriaDAL.cs",
+              "RelativeDocumentMoniker": "..\\CapaDatos\\CategoriaDAL.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\CapaDatos\\CategoriaDAL.cs",
+              "RelativeToolTip": "..\\CapaDatos\\CategoriaDAL.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAswB4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T23:05:00.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ClienteDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\CapaDatos\\ClienteDAL.cs",
+              "RelativeDocumentMoniker": "..\\CapaDatos\\ClienteDAL.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\CapaDatos\\ClienteDAL.cs",
+              "RelativeToolTip": "..\\CapaDatos\\ClienteDAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T22:48:46.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductoDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\CapaDatos\\ProductoDAL.cs",
+              "RelativeDocumentMoniker": "..\\CapaDatos\\ProductoDAL.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\CapaDatos\\ProductoDAL.cs",
+              "RelativeToolTip": "..\\CapaDatos\\ProductoDAL.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwEAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T22:30:57.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FrmProductos.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmProductos.cs",
+              "RelativeDocumentMoniker": "FrmProductos.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SistemaFacturacion_EstivenCano_AngiRuiz\\Pantallas_Sistema_facturaci\u00F3n_EstivenCano_AngiRuiz\\FrmProductos.cs",
+              "RelativeToolTip": "FrmProductos.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAnwAoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T22:29:53.691Z",
+              "EditorCaption": ""
             }
           ]
         }

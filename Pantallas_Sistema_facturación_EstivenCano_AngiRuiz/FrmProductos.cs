@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaDatos;
 
 namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 {
     public partial class FrmProductos : Form
     {
+        ProductoBLL productoBLL = new ProductoBLL();
         public FrmProductos()
         {
             InitializeComponent();
+        }
+
+        private void FrmProductos_Load(object sender, EventArgs e)
+        {
+            CargarProductos();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -32,11 +40,7 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 
         }
 
-        private void FrmProductos_Load(object sender, EventArgs e)
-        {
-            EstiloGrid();
-            this.Dock = DockStyle.Fill;
-        }
+        
 
         private void EstiloGrid()
         {
@@ -60,14 +64,43 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            FrmRegistroProducto registroProducto = new FrmRegistroProducto();
-            registroProducto.ShowDialog();
+            FrmRegistroProducto frm = new FrmRegistroProducto();
+            frm.ShowDialog();
+            CargarProductos();
         }
+        
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            FrmRegistroProducto registroProducto = new FrmRegistroProducto();
-            registroProducto.ShowDialog();
+            if (dgvProductos.SelectedRows.Count == 0) return;
+
+            FrmRegistroProducto frm = new FrmRegistroProducto();
+
+            frm.EsEdicion = true;
+            frm.IdProducto = Convert.ToInt32(
+                dgvProductos.CurrentRow.Cells["IdProducto"].Value);
+
+            frm.ShowDialog();
+            CargarProductos();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void CargarProductos()
+        {
+            dgvProductos.DataSource = productoBLL.ObtenerProductos();
+
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProductos.ReadOnly = true;
         }
     }
 }

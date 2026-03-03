@@ -35,7 +35,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.txtRutaImagen = new System.Windows.Forms.TextBox();
             this.txtDetalles = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -112,13 +112,13 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Categoria";
             // 
-            // comboBox1
+            // cboCategoria
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(585, 88);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 7;
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(585, 88);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(121, 24);
+            this.cboCategoria.TabIndex = 7;
             // 
             // txtRutaImagen
             // 
@@ -178,6 +178,7 @@
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnSalir
             // 
@@ -203,7 +204,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtDetalles);
             this.Controls.Add(this.txtRutaImagen);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboCategoria);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -215,6 +216,7 @@
             this.Name = "FrmRegistroProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmRegistroProducto";
+            this.Load += new System.EventHandler(this.FrmRegistroProducto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,7 +231,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.TextBox txtRutaImagen;
         private System.Windows.Forms.TextBox txtDetalles;
         private System.Windows.Forms.TextBox txtNombre;

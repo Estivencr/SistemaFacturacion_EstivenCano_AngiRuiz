@@ -45,21 +45,18 @@ namespace CapaDatos
         public DataTable BuscarCliente(string texto)
         {
             DataTable tabla = new DataTable();
-
             using (SqlConnection cn = conexion.CrearConexion())
             {
                 SqlCommand cmd = new SqlCommand(
                     @"SELECT * FROM Clientes
-                      WHERE Nombre LIKE @Texto
-                      OR Documento LIKE @Texto",
+              WHERE NombreCompleto LIKE @Texto 
+              OR Documento LIKE @Texto", // Cambiado 'Nombre' por 'NombreCompleto'
                     cn);
 
                 cmd.Parameters.AddWithValue("@Texto", "%" + texto + "%");
-
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(tabla);
             }
-
             return tabla;
         }
 

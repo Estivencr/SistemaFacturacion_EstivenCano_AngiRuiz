@@ -49,5 +49,22 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
             cboCategoria.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cboCategoria.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                categoriaBLL.InsertarCategoria(
+                    txtNombreCategoria.Text.Trim()
+                );
+
+                MessageBox.Show("Categoría guardada correctamente.");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

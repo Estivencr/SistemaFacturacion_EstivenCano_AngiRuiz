@@ -13,8 +13,8 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 {
     public partial class FrmRegistroClientes : Form
     {
-        public int IdCliente = 0;
-        public bool EsEdicion = false;
+        public bool EsEdicion { get; set; } = false;
+        public int IdClienteSeleccionado { get; set; }
 
         ClienteBLL clienteBLL = new ClienteBLL();
 
@@ -51,29 +51,24 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
         {
             try
             {
+                // Llamamos al método de la Capa de Negocio que ya creaste
                 clienteBLL.GuardarCliente(
                     EsEdicion,
-                    IdCliente,
-                    txtNombre.Text,
-                    txtDocumento.Text,
-                    txtTelefono.Text,
-                    txtEmail.Text,
-                    txtDireccion.Text
+                    IdClienteSeleccionado,
+                    txtNombre.Text.Trim(),
+                    txtDocumento.Text.Trim(),
+                    txtTelefono.Text.Trim(),
+                    txtEmail.Text.Trim(),
+                    txtDireccion.Text.Trim()
                 );
 
-                MessageBox.Show("Cliente guardado correctamente.",
-                                "Sistema",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-
+                MessageBox.Show("Operación realizada con éxito", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK; // Indica al padre que hubo cambios
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,
-                                "Error",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -84,24 +79,17 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 
         private void FrmRegistroClientes_Load(object sender, EventArgs e)
         {
-            if (EsEdicion)
-            {
-                CargarDatos();
-            }
+      
         }
 
-        private void CargarDatos()
+        public void CargarDatos(string nombre, string documento, string direccion, string telefono, string email)
         {
-            DataTable tabla = clienteBLL.ObtenerClientePorId(IdCliente);
-
-            if (tabla.Rows.Count > 0)
-            {
-                txtNombre.Text = tabla.Rows[0]["NombreCompleto"].ToString();
-                txtDocumento.Text = tabla.Rows[0]["Documento"].ToString();
-                txtTelefono.Text = tabla.Rows[0]["Telefono"].ToString();
-                txtEmail.Text = tabla.Rows[0]["Email"].ToString();
-                txtDireccion.Text = tabla.Rows[0]["Direccion"].ToString();
-            }
+            txtNombre.Text = nombre;
+            txtDocumento.Text = documento;
+            txtDireccion.Text = direccion;
+            txtTelefono.Text = telefono;
+            txtEmail.Text = email;
+            EsEdicion = true;
         }
 
 

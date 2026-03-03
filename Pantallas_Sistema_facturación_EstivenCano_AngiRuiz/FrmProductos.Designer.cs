@@ -109,6 +109,7 @@
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(1012, 605);
             this.dgvProductos.TabIndex = 12;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
             // pnlBusqueda
             // 
@@ -138,6 +139,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(250, 22);
             this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // pictureBox1
             // 
@@ -165,7 +167,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(270, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(418, 51);
+            this.label2.Size = new System.Drawing.Size(334, 41);
             this.label2.TabIndex = 0;
             this.label2.Text = "Gestión de Productos";
             // 

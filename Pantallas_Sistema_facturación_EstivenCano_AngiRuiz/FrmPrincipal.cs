@@ -40,6 +40,7 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
         {
             FrmClientes frm = new FrmClientes();
             frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
             frm.Show();
         }
 
