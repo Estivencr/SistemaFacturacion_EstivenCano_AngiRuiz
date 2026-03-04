@@ -18,38 +18,84 @@ namespace CapaNegocio
         }
 
         public void GuardarProducto(
-    bool esEdicion,
-    int idProducto,
-    string nombre,
-    int codigo,
-    decimal precioCompra,
-    decimal precioVenta,
-    int stock,
-    int idCategoria,
-    string rutaImagen,
-    string detalles)
-        {
-            if (string.IsNullOrWhiteSpace(nombre))
-                throw new Exception("El nombre es obligatorio.");
+        bool esEdicion,
+        int IdProducto,
+        string Nombre,
+        string CodigoReferencia,
+        decimal PrecioCompra,
+        decimal PrecioVenta,
+        int Stock,
+        int IdCategoria,
+        string RutaImagen,
+        string Detalles)
+            {
+                if (string.IsNullOrWhiteSpace(Nombre))
+                    throw new Exception("El nombre es obligatorio.");
 
-            if (string.IsNullOrWhiteSpace(codigo))
-                throw new Exception("El código es obligatorio.");
+                if (string.IsNullOrWhiteSpace(CodigoReferencia))
+                    throw new Exception("El código es obligatorio.");
 
-            if (precioVenta <= precioCompra)
-                throw new Exception("El precio de venta debe ser mayor al de compra.");
+                if (PrecioVenta <= PrecioCompra)
+                    throw new Exception("El precio de venta debe ser mayor al de compra.");
 
-            if (stock < 0)
-                throw new Exception("Stock inválido.");
+                if (Stock < 0)
+                    throw new Exception("Stock inválido.");
 
-            if (!esEdicion)
-                productoDAL.InsertarProducto(
-                    nombre, codigo, precioCompra, precioVenta,
-                    stock, idCategoria, rutaImagen, detalles);
+                if (esEdicion)
+                {
+                    productoDAL.ActualizarProducto(
+                        IdProducto,
+                        Nombre,
+                        CodigoReferencia,
+                        PrecioCompra,
+                        PrecioVenta,
+                        Stock,
+                        IdCategoria,
+                        RutaImagen,
+                        Detalles);
+                }
+                else
+                {
+                    productoDAL.InsertarProducto(
+                        Nombre,
+                        CodigoReferencia,
+                        PrecioCompra,
+                        PrecioVenta,
+                        Stock,
+                        IdCategoria,
+                        RutaImagen,
+                        Detalles);
+                }
         }
 
         public void CambiarEstado(int idProducto, bool estado)
         {
             productoDAL.CambiarEstado(idProducto, estado);
+        }
+
+        public DataRow ObtenerProductoPorId(int id)
+        {
+            return productoDAL.ObtenerProductoPorId(id);
+        }
+
+        public bool EliminarProducto(int idProducto)
+        {
+            return productoDAL.EliminarProducto(idProducto);
+        }
+
+        public DataTable BuscarProductos(string texto)
+        {
+            return productoDAL.BuscarProductos(texto);
+        }
+
+        public bool ExisteCodigo(string codigo)
+        {
+            return productoDAL.ExisteCodigo(codigo);
+        }
+
+        public bool ExisteCodigoEnOtroProducto(string codigo, int idProducto)
+        {
+            return productoDAL.ExisteCodigoEnOtroProducto(codigo, idProducto);
         }
     }
 }

@@ -38,16 +38,17 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmClientes frm = new FrmClientes();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
+            FrmClientes clientes = new FrmClientes();
+            clientes.MdiParent = this;
+            clientes.Dock = DockStyle.Fill;
+            clientes.Show();
         }
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmProductos productos = new FrmProductos();
             productos.MdiParent = this;
+            productos.Dock = DockStyle.Fill;
             productos.Show();
         }
 
@@ -62,6 +63,7 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
         {
             FrmAdminSeguridad seguridad = new FrmAdminSeguridad();
             seguridad.MdiParent = this;
+            seguridad.Dock = DockStyle.Fill;
             seguridad.Show();
         }
     }

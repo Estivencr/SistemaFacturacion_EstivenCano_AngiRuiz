@@ -50,5 +50,15 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnIngresar;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

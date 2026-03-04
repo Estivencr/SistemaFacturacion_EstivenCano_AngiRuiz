@@ -24,47 +24,77 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 
         private void frmCategoriaProductos_Load(object sender, EventArgs e)
         {
-            if (EsEdicion)
-            {
-                this.Text = "Actualizar Categoría";
-                btnActualizar.Text = "Actualizar";
-                CargarCategorias();
-            }
-            else
-            {
-                this.Text = "Nueva Categoría";
-                btnActualizar.Text = "Guardar";
-            }
+            CargarCategorias();
         }
 
         private void CargarCategorias()
         {
+            CategoriaBLL categoriaBLL = new CategoriaBLL();
             DataTable dt = categoriaBLL.MostrarCategorias();
 
+            cboCategoria.DataSource = null;
             cboCategoria.DataSource = dt;
             cboCategoria.DisplayMember = "NombreCategoria";
             cboCategoria.ValueMember = "IdCategoria";
-
-            // Activar autocompletado
-            cboCategoria.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            cboCategoria.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cboCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             try
             {
-                categoriaBLL.InsertarCategoria(
-                    txtNombreCategoria.Text.Trim()
-                );
+                string nombre = txtNombreCategoria.Text.Trim();
 
-                MessageBox.Show("Categoría guardada correctamente.");
-                this.Close();
+                if (string.IsNullOrWhiteSpace(nombre))
+                {
+                    MessageBox.Show("Ingrese un nombre.");
+                    return;
+                }
+
+                if (EsEdicion)
+                {
+                    categoriaBLL.ActualizarCategoria(IdCategoria, nombre);
+                    MessageBox.Show("Categoría actualizada correctamente.");
+                }
+                else
+                {
+                    categoriaBLL.InsertarCategoria(nombre);
+                    MessageBox.Show("Categoría registrada correctamente.");
+                }
+
+                CargarCategorias();
+
+                txtNombreCategoria.Clear();
+                cboCategoria.SelectedIndex = -1;
+                EsEdicion = false;
+                IdCategoria = 0;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+
+        private void cboCategoria_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cboCategoria.SelectedValue == null)
+                return;
+
+            IdCategoria = Convert.ToInt32(cboCategoria.SelectedValue);
+            txtNombreCategoria.Text = cboCategoria.Text;
+            EsEdicion = true;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            txtNombreCategoria.Clear();
+            cboCategoria.SelectedIndex = -1;
+
+            IdCategoria = 0;
+            EsEdicion = false;
+
+            txtNombreCategoria.Focus();
         }
     }
 }

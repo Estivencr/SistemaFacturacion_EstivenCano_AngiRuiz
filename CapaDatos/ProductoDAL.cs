@@ -44,7 +44,7 @@ namespace CapaDatos
             {
                 SqlCommand cmd = new SqlCommand(
                 @"INSERT INTO Productos
-        (Nombre, Codigo, PrecioCompra, PrecioVenta,
+        (Nombre, CodigoReferencia, PrecioCompra, PrecioVenta,
          Stock, IdCategoria, RutaImagen, Detalles)
          VALUES
         (@Nombre, @Codigo, @PrecioCompra, @PrecioVenta,
@@ -64,27 +64,40 @@ namespace CapaDatos
             }
         }
 
-        public void ActualizarProducto(int idProducto,
-                               string nombre,
-                               string descripcion,
-                               decimal precio,
-                               int stock)
+        public void ActualizarProducto(
+    int idProducto,
+    string nombre,
+    string codigo,
+    decimal precioCompra,
+    decimal precioVenta,
+    int stock,
+    int idCategoria,
+    string rutaImagen,
+    string detalles)
         {
             using (SqlConnection cn = conexion.CrearConexion())
             {
                 SqlCommand cmd = new SqlCommand(
-                    @"UPDATE Productos SET
-              Nombre=@Nombre,
-              Descripcion=@Descripcion,
-              Precio=@Precio,
-              Stock=@Stock
-              WHERE IdProducto=@IdProducto", cn);
+                @"UPDATE Productos SET
+            Nombre=@Nombre,
+            CodigoReferencia=@Codigo,
+            PrecioCompra=@PrecioCompra,
+            PrecioVenta=@PrecioVenta,
+            Stock=@Stock,
+            IdCategoria=@IdCategoria,
+            RutaImagen=@RutaImagen,
+            Detalles=@Detalles
+          WHERE IdProducto=@IdProducto", cn);
 
                 cmd.Parameters.AddWithValue("@IdProducto", idProducto);
                 cmd.Parameters.AddWithValue("@Nombre", nombre);
-                cmd.Parameters.AddWithValue("@Descripcion", descripcion);
-                cmd.Parameters.AddWithValue("@Precio", precio);
+                cmd.Parameters.AddWithValue("@Codigo", codigo);
+                cmd.Parameters.AddWithValue("@PrecioCompra", precioCompra);
+                cmd.Parameters.AddWithValue("@PrecioVenta", precioVenta);
                 cmd.Parameters.AddWithValue("@Stock", stock);
+                cmd.Parameters.AddWithValue("@IdCategoria", idCategoria);
+                cmd.Parameters.AddWithValue("@RutaImagen", rutaImagen);
+                cmd.Parameters.AddWithValue("@Detalles", detalles);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -104,6 +117,112 @@ namespace CapaDatos
 
                 cn.Open();
                 cmd.ExecuteNonQuery();
+            }
+        }
+
+        public DataRow ObtenerProductoPorId(int idProducto)
+        {
+            using (SqlConnection cn = conexion.CrearConexion())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    @"SELECT IdProducto,
+                     Nombre,
+                     CodigoReferencia,
+                     PrecioCompra,
+                     PrecioVenta,
+                     Stock,
+                     IdCategoria,
+                     RutaImagen,
+                     Detalles
+              FROM Productos
+              WHERE IdProducto = @IdProducto",
+                    cn);
+
+                cmd.Parameters.AddWithValue("@IdProducto", idProducto);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt.Rows.Count > 0 ? dt.Rows[0] : null;
+            }
+        }
+
+        public bool EliminarProducto(int idProducto)
+        {
+            bool eliminado = false;
+
+            using (SqlConnection cn = conexion.CrearConexion())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    "DELETE FROM Productos WHERE IdProducto = @IdProducto",
+                    cn);
+
+                cmd.Parameters.AddWithValue("@IdProducto", idProducto);
+
+                cn.Open();
+                int filas = cmd.ExecuteNonQuery();
+
+                eliminado = filas > 0;
+            }
+
+            return eliminado;
+        }
+
+        public DataTable BuscarProductos(string nombre)
+        {
+            DataTable tabla = new DataTable();
+
+            using (SqlConnection cn = conexion.CrearConexion())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT * FROM Productos WHERE Nombre LIKE @Nombre",
+                    cn);
+
+                cmd.Parameters.AddWithValue("@Nombre", "%" + nombre + "%");
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+
+            return tabla;
+        }
+
+        public bool ExisteCodigo(string codigo)
+        {
+            using (SqlConnection cn = conexion.CrearConexion())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT COUNT(*) FROM Productos WHERE CodigoReferencia = @Codigo",
+                    cn);
+
+                cmd.Parameters.AddWithValue("@Codigo", codigo);
+
+                cn.Open();
+                int cantidad = (int)cmd.ExecuteScalar();
+
+                return cantidad > 0;
+            }
+        }
+
+        public bool ExisteCodigoEnOtroProducto(string codigo, int idProducto)
+        {
+            using (SqlConnection cn = conexion.CrearConexion())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    @"SELECT COUNT(*) 
+              FROM Productos 
+              WHERE CodigoReferencia = @Codigo 
+              AND IdProducto <> @IdProducto",
+                    cn);
+
+                cmd.Parameters.AddWithValue("@Codigo", codigo);
+                cmd.Parameters.AddWithValue("@IdProducto", idProducto);
+
+                cn.Open();
+                int cantidad = (int)cmd.ExecuteScalar();
+
+                return cantidad > 0;
             }
         }
     }

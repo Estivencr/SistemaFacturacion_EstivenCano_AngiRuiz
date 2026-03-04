@@ -40,27 +40,6 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 
         }
 
-        
-
-        private void EstiloGrid()
-        {
-            dgvProductos.BorderStyle = BorderStyle.None;
-            dgvProductos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 247, 250);
-            dgvProductos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvProductos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 123, 255);
-            dgvProductos.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgvProductos.BackgroundColor = Color.White;
-
-            dgvProductos.EnableHeadersVisualStyles = false;
-            dgvProductos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 66, 91);
-            dgvProductos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvProductos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-
-            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProductos.MultiSelect = false;
-            dgvProductos.ReadOnly = true;
-        }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -72,21 +51,27 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dgvProductos.SelectedRows.Count == 0) return;
+            if (dgvProductos.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un producto para editar.");
+                return;
+            }
 
-            FrmRegistroProducto frm = new FrmRegistroProducto();
-
-            frm.EsEdicion = true;
-            frm.IdProducto = Convert.ToInt32(
+            int idProducto = Convert.ToInt32(
                 dgvProductos.CurrentRow.Cells["IdProducto"].Value);
 
+            FrmRegistroProducto frm = new FrmRegistroProducto();
+            frm.EsEdicion = true;
+            frm.IdProducto = idProducto;
+
             frm.ShowDialog();
+
             CargarProductos();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-
+            dgvProductos.DataSource = productoBLL.BuscarProductos(txtBuscar.Text.Trim());
         }
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -101,6 +86,27 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
             dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProductos.ReadOnly = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvProductos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Seleccione un producto.");
+                return;
+            }
+
+            int id = Convert.ToInt32(dgvProductos.CurrentRow.Cells["IdProducto"].Value);
+
+            var confirm = MessageBox.Show("¿Desea eliminar este producto?",
+                                          "Confirmar",
+                                          MessageBoxButtons.YesNo);
+
+            if (confirm == DialogResult.Yes)
+            {
+                productoBLL.EliminarProducto(id);
+                CargarProductos();
+            }
         }
     }
 }

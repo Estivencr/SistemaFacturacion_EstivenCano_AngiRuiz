@@ -110,6 +110,9 @@ select * from DetalleVenta;
 select * from Empleados;
 select * from Productos;
 select * from Usuarios;
+SELECT IdCategoria, NombreCategoria 
+FROM Categorias 
+WHERE Estado = 1
 
 
 INSERT INTO Clientes (NombreCompleto, Documento, Telefono, Email, Direccion, Estado)

@@ -67,6 +67,7 @@
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -87,9 +88,9 @@
             this.pnlBotones.Controls.Add(this.btnEliminar);
             this.pnlBotones.Controls.Add(this.btnEditar);
             this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBotones.Location = new System.Drawing.Point(0, 674);
+            this.pnlBotones.Location = new System.Drawing.Point(0, 410);
             this.pnlBotones.Name = "pnlBotones";
-            this.pnlBotones.Size = new System.Drawing.Size(1012, 73);
+            this.pnlBotones.Size = new System.Drawing.Size(1002, 73);
             this.pnlBotones.TabIndex = 15;
             this.pnlBotones.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBotones_Paint);
             // 
@@ -107,7 +108,7 @@
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(1012, 605);
+            this.dgvProductos.Size = new System.Drawing.Size(1002, 341);
             this.dgvProductos.TabIndex = 12;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
@@ -119,7 +120,7 @@
             this.pnlBusqueda.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBusqueda.Location = new System.Drawing.Point(0, 71);
             this.pnlBusqueda.Name = "pnlBusqueda";
-            this.pnlBusqueda.Size = new System.Drawing.Size(1012, 71);
+            this.pnlBusqueda.Size = new System.Drawing.Size(1002, 71);
             this.pnlBusqueda.TabIndex = 14;
             // 
             // label1
@@ -156,7 +157,7 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1012, 71);
+            this.pnlHeader.Size = new System.Drawing.Size(1002, 71);
             this.pnlHeader.TabIndex = 13;
             this.pnlHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHeader_Paint);
             // 
@@ -175,7 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1012, 747);
+            this.ClientSize = new System.Drawing.Size(1002, 483);
             this.ControlBox = false;
             this.Controls.Add(this.pnlBotones);
             this.Controls.Add(this.dgvProductos);
