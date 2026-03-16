@@ -26,6 +26,22 @@ namespace CapaNegocio
             return usuarioDAL.ListarUsuarios();
         }
 
+        public DataTable ListarRoles()
+        {
+            return usuarioDAL.ListarRoles();
+        }
+
+        public void ActualizarRol(int idUsuario, string rol)
+        {
+            if (idUsuario <= 0)
+                throw new Exception("Usuario invalido.");
+
+            if (string.IsNullOrWhiteSpace(rol))
+                throw new Exception("Ingrese el rol.");
+
+            usuarioDAL.ActualizarRol(idUsuario, rol.Trim());
+        }
+
         public DataRow ObtenerUsuarioPorId(int idUsuario)
         {
             if (idUsuario <= 0)

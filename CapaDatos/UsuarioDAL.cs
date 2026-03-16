@@ -60,6 +60,42 @@ namespace CapaDatos
             return tabla;
         }
 
+        public DataTable ListarRoles()
+        {
+            DataTable tabla = new DataTable();
+
+            using (SqlConnection cn = conexion.CrearConexion())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    @"SELECT DISTINCT Rol
+                      FROM Usuarios
+                      WHERE Rol IS NOT NULL AND LTRIM(RTRIM(Rol)) <> ''
+                      ORDER BY Rol",
+                    cn);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+
+            return tabla;
+        }
+
+        public void ActualizarRol(int idUsuario, string rol)
+        {
+            using (SqlConnection cn = conexion.CrearConexion())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE Usuarios SET Rol = @Rol WHERE IdUsuario = @IdUsuario",
+                    cn);
+
+                cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                cmd.Parameters.AddWithValue("@Rol", rol);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public DataRow ObtenerUsuarioPorId(int idUsuario)
         {
             DataTable tabla = new DataTable();
