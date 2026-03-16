@@ -87,7 +87,7 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirMdi(new FrmEmpleados());
+            AbrirMdi(new FrmListaEmpleados());
         }
 
         private void AbrirMdi(Form form)

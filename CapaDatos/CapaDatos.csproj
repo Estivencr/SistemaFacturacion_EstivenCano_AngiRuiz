@@ -49,6 +49,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="ClienteDAL.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="EmpleadoDAL.cs" />
     <Compile Include="InformeDAL.cs" />
     <Compile Include="ProductoDAL.cs" />
     <Compile Include="VentaDAL.cs" />

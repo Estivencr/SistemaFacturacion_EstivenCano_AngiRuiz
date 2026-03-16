@@ -148,6 +148,9 @@
     <Compile Include="FrmEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmListaEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmRolEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
