@@ -17,10 +17,14 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
         public int IdClienteSeleccionado { get; set; }
 
         ClienteBLL clienteBLL = new ClienteBLL();
+        private readonly ErrorProvider _errorProvider = new ErrorProvider();
 
         public FrmRegistroClientes()
         {
             InitializeComponent();
+
+            _errorProvider.ContainerControl = this;
+            _errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -51,6 +55,9 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
         {
             try
             {
+                if (!ValidarCampos())
+                    return;
+
                 // Llamamos al método de la Capa de Negocio que ya creaste
                 clienteBLL.GuardarCliente(
                     EsEdicion,
@@ -70,6 +77,32 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private bool ValidarCampos()
+        {
+            _errorProvider.Clear();
+            Control firstInvalid = null;
+
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                _errorProvider.SetError(txtNombre, "El nombre es obligatorio.");
+                if (firstInvalid == null) firstInvalid = txtNombre;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtDocumento.Text))
+            {
+                _errorProvider.SetError(txtDocumento, "El documento es obligatorio.");
+                if (firstInvalid == null) firstInvalid = txtDocumento;
+            }
+
+            if (firstInvalid != null)
+            {
+                firstInvalid.Focus();
+                return false;
+            }
+
+            return true;
         }
 
         private void txtDocumento_TextChanged(object sender, EventArgs e)

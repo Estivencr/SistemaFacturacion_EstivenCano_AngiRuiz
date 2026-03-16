@@ -14,15 +14,22 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
     public partial class FrmLogin : Form
     {
         UsuarioBLL usuarioBLL = new UsuarioBLL();
+        private readonly ErrorProvider _errorProvider = new ErrorProvider();
         public FrmLogin()
         {
             InitializeComponent();
+
+            _errorProvider.ContainerControl = this;
+            _errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             try
             {
+                if (!ValidarCampos())
+                    return;
+
                 DataTable tabla = usuarioBLL.Login(
                     txtUsuario.Text,
                     txtClave.Text
@@ -49,6 +56,33 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private bool ValidarCampos()
+        {
+            _errorProvider.Clear();
+
+            Control firstInvalid = null;
+
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
+            {
+                _errorProvider.SetError(txtUsuario, "Ingrese el usuario.");
+                if (firstInvalid == null) firstInvalid = txtUsuario;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtClave.Text))
+            {
+                _errorProvider.SetError(txtClave, "Ingrese la contraseña.");
+                if (firstInvalid == null) firstInvalid = txtClave;
+            }
+
+            if (firstInvalid != null)
+            {
+                firstInvalid.Focus();
+                return false;
+            }
+
+            return true;
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)

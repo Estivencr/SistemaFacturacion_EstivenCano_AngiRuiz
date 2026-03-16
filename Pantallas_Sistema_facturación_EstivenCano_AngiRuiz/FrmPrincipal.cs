@@ -15,6 +15,12 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
         public FrmPrincipal()
         {
             InitializeComponent();
+
+            // En el Designer hay items de menu, pero algunos no estaban conectados.
+            facturasToolStripMenuItem.Click += facturasToolStripMenuItem_Click;
+            informesToolStripMenuItem.Click += informesToolStripMenuItem_Click;
+            rolesToolStripMenuItem.Click += rolesToolStripMenuItem_Click;
+            empleadosToolStripMenuItem.Click += empleadosToolStripMenuItem_Click;
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,6 +71,33 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
             seguridad.MdiParent = this;
             seguridad.Dock = DockStyle.Fill;
             seguridad.Show();
+        }
+
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirMdi(new FrmFacturas());
+        }
+
+        private void informesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirMdi(new FrmInformes());
+        }
+
+        private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirMdi(new FrmRolEmpleados());
+        }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirMdi(new FrmEmpleados());
+        }
+
+        private void AbrirMdi(Form form)
+        {
+            form.MdiParent = this;
+            form.Dock = DockStyle.Fill;
+            form.Show();
         }
     }
 }

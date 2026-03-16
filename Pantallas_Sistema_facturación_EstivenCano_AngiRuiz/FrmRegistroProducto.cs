@@ -19,11 +19,15 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 
         private ProductoBLL productoBLL = new ProductoBLL();
         private CategoriaBLL categoriaBLL = new CategoriaBLL();
+        private readonly ErrorProvider _errorProvider = new ErrorProvider();
 
         public FrmRegistroProducto()
         {
             InitializeComponent();
             this.AcceptButton = btnGuardar;
+
+            _errorProvider.ContainerControl = this;
+            _errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
         }
 
         private void FrmRegistroProducto_Load(object sender, EventArgs e)
@@ -54,6 +58,7 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
         {
             try
             {
+                _errorProvider.Clear();
                 if (!ValidarCampos())
                     return;
 
@@ -64,31 +69,33 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
                 if (!decimal.TryParse(txtPrecioCompra.Text, out precioCompra) ||
                     !decimal.TryParse(txtPrecioVenta.Text, out precioVenta))
                 {
-                    MessageBox.Show("Formato de precio inválido.");
+                    _errorProvider.SetError(txtPrecioCompra, "Formato de precio inválido.");
+                    _errorProvider.SetError(txtPrecioVenta, "Formato de precio inválido.");
                     return;
                 }
 
                 if (!int.TryParse(txtStock.Text, out stock))
                 {
-                    MessageBox.Show("Formato de stock inválido.");
+                    _errorProvider.SetError(txtStock, "Formato de stock inválido.");
                     return;
                 }
 
                 if (precioCompra <= 0 || precioVenta <= 0)
                 {
-                    MessageBox.Show("Los precios deben ser mayores a 0.");
+                    _errorProvider.SetError(txtPrecioCompra, "Debe ser mayor a 0.");
+                    _errorProvider.SetError(txtPrecioVenta, "Debe ser mayor a 0.");
                     return;
                 }
 
                 if (precioVenta < precioCompra)
                 {
-                    MessageBox.Show("El precio de venta no puede ser menor al de compra.");
+                    _errorProvider.SetError(txtPrecioVenta, "No puede ser menor al de compra.");
                     return;
                 }
 
                 if (stock < 0)
                 {
-                    MessageBox.Show("El stock no puede ser negativo.");
+                    _errorProvider.SetError(txtStock, "No puede ser negativo.");
                     return;
                 }
 
@@ -118,45 +125,48 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 
         private bool ValidarCampos()
         {
+            _errorProvider.Clear();
+            Control firstInvalid = null;
+
             if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
-                MessageBox.Show("Ingrese el nombre del producto.");
-                txtNombre.Focus();
-                return false;
+                _errorProvider.SetError(txtNombre, "Ingrese el nombre del producto.");
+                if (firstInvalid == null) firstInvalid = txtNombre;
             }
 
             if (string.IsNullOrWhiteSpace(txtCodigo.Text))
             {
-                MessageBox.Show("Ingrese el código del producto.");
-                txtCodigo.Focus();
-                return false;
+                _errorProvider.SetError(txtCodigo, "Ingrese el código del producto.");
+                if (firstInvalid == null) firstInvalid = txtCodigo;
             }
 
             if (string.IsNullOrWhiteSpace(txtPrecioCompra.Text))
             {
-                MessageBox.Show("Ingrese el precio de compra.");
-                txtPrecioCompra.Focus();
-                return false;
+                _errorProvider.SetError(txtPrecioCompra, "Ingrese el precio de compra.");
+                if (firstInvalid == null) firstInvalid = txtPrecioCompra;
             }
 
             if (string.IsNullOrWhiteSpace(txtPrecioVenta.Text))
             {
-                MessageBox.Show("Ingrese el precio de venta.");
-                txtPrecioVenta.Focus();
-                return false;
+                _errorProvider.SetError(txtPrecioVenta, "Ingrese el precio de venta.");
+                if (firstInvalid == null) firstInvalid = txtPrecioVenta;
             }
 
             if (string.IsNullOrWhiteSpace(txtStock.Text))
             {
-                MessageBox.Show("Ingrese el stock.");
-                txtStock.Focus();
-                return false;
+                _errorProvider.SetError(txtStock, "Ingrese el stock.");
+                if (firstInvalid == null) firstInvalid = txtStock;
             }
 
             if (cboCategoria.SelectedValue == null)
             {
-                MessageBox.Show("Seleccione una categoría.");
-                cboCategoria.Focus();
+                _errorProvider.SetError(cboCategoria, "Seleccione una categoría.");
+                if (firstInvalid == null) firstInvalid = cboCategoria;
+            }
+
+            if (firstInvalid != null)
+            {
+                firstInvalid.Focus();
                 return false;
             }
 

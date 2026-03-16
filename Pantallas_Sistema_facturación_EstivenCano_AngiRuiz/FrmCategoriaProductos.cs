@@ -17,9 +17,13 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
         public int IdCategoria = 0;
 
         CategoriaBLL categoriaBLL = new CategoriaBLL();
+        private readonly ErrorProvider _errorProvider = new ErrorProvider();
         public FrmCategoriaProductos()
         {
             InitializeComponent();
+
+            _errorProvider.ContainerControl = this;
+            _errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
         }
 
         private void frmCategoriaProductos_Load(object sender, EventArgs e)
@@ -47,9 +51,13 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 
                 if (string.IsNullOrWhiteSpace(nombre))
                 {
-                    MessageBox.Show("Ingrese un nombre.");
+                    _errorProvider.Clear();
+                    _errorProvider.SetError(txtNombreCategoria, "Ingrese un nombre.");
+                    txtNombreCategoria.Focus();
                     return;
                 }
+
+                _errorProvider.Clear();
 
                 if (EsEdicion)
                 {
@@ -81,6 +89,7 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
             if (cboCategoria.SelectedValue == null)
                 return;
 
+            _errorProvider.Clear();
             IdCategoria = Convert.ToInt32(cboCategoria.SelectedValue);
             txtNombreCategoria.Text = cboCategoria.Text;
             EsEdicion = true;

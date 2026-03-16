@@ -136,6 +136,18 @@
     <Compile Include="FrmRegistroProducto.Designer.cs">
       <DependentUpon>FrmRegistroProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInformes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRolEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAdminSeguridad.resx">
