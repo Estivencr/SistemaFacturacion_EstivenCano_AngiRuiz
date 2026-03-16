@@ -9,7 +9,7 @@ Proyecto de escritorio en C# (WinForms) con arquitectura por capas:
 ## Requisitos
 - Visual Studio 2019 o superior
 - .NET Framework 4.7.2
-- SQL Server / SQL Server Express (ej: `SQLEXPRESS`)
+- SQL Server / SQL Server Express
 
 ## Configuracion inicial
 1. Ejecuta el script: `Query/SQLQuery1.sql` (crea `SistemaVentasDB` y sus tablas).
