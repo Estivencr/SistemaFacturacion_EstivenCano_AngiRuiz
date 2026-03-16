@@ -1,4 +1,4 @@
-CREATE DATABASE SistemaVentasDB;
+ÔªøCREATE DATABASE SistemaVentasDB;
 GO
 
 USE SistemaVentasDB;
@@ -97,34 +97,61 @@ CREATE TABLE DetalleVenta(
 
 
 INSERT INTO Categorias (NombreCategoria) VALUES
-('ElectrÛnica'),
+('Electr√≥nica'),
 ('Ropa'),
 ('Alimentos');
 
-INSERT INTO Empleados (NombreCompleto, Cargo)
-VALUES ('Administrador General', 'Administrador');
+-- Empleado admin por defecto
+DECLARE @IdEmpleadoAdmin INT;
 
-select * from Clientes;
-select * from Categorias;
-select * from DetalleVenta;
-select * from Empleados;
-select * from Productos;
-select * from Usuarios;
-SELECT IdCategoria, NombreCategoria 
-FROM Categorias 
-WHERE Estado = 1
+IF NOT EXISTS (SELECT 1 FROM Empleados WHERE NombreCompleto = 'Administrador General')
+BEGIN
+    INSERT INTO Empleados (NombreCompleto, Cargo, Estado)
+    VALUES ('Administrador General', 'Administrador', 1);
 
+    SET @IdEmpleadoAdmin = SCOPE_IDENTITY();
+END
+ELSE
+BEGIN
+    SELECT TOP 1 @IdEmpleadoAdmin = IdEmpleado
+    FROM Empleados
+    WHERE NombreCompleto = 'Administrador General'
+    ORDER BY IdEmpleado;
+END
 
+-- Usuario por defecto
+-- Usuario: Estiven
+-- Clave : 123456
+IF NOT EXISTS (SELECT 1 FROM Usuarios WHERE Usuario = 'Estiven')
+BEGIN
+    INSERT INTO Usuarios (IdEmpleado, Usuario, ClaveHash, Rol, Estado)
+    VALUES (
+        @IdEmpleadoAdmin,
+        'Estiven',
+        LOWER(CONVERT(VARCHAR(64), HASHBYTES('SHA2_256', '123456'), 2)),
+        'Administrador',
+        1
+    );
+END
+
+-- Consultas de verificacion (opcional)
+-- SELECT * FROM Clientes;
+-- SELECT * FROM Categorias;
+-- SELECT * FROM DetalleVenta;
+-- SELECT * FROM Empleados;
+-- SELECT * FROM Productos;
+-- SELECT * FROM Usuarios;
+-- SELECT IdCategoria, NombreCategoria FROM Categorias WHERE Estado = 1;
 INSERT INTO Clientes (NombreCompleto, Documento, Telefono, Email, Direccion, Estado)
 VALUES 
-('Carlos AndrÈs GÛmez', '1023456789', '3001234567', 'carlos.gomez@email.com', 'Calle 45 #12-34, Bogot·', 1),
+('Carlos Andr√©s G√≥mez', '1023456789', '3001234567', 'carlos.gomez@email.com', 'Calle 45 #12-34, Bogot√°', 1),
 
-('MarÌa Fernanda LÛpez', '1098765432', '3109876543', 'maria.lopez@email.com', 'Cra 10 #20-15, MedellÌn', 1),
+('Mar√≠a Fernanda L√≥pez', '1098765432', '3109876543', 'maria.lopez@email.com', 'Cra 10 #20-15, Medell√≠n', 1),
 
-('Juan Sebasti·n Torres', '1011122233', '3154567890', 'juan.torres@email.com', 'Av 68 #30-50, Cali', 1),
+('Juan Sebasti√°n Torres', '1011122233', '3154567890', 'juan.torres@email.com', 'Av 68 #30-50, Cali', 1),
 
 ('Laura Camila Rojas', '1033344455', '3206549871', 'laura.rojas@email.com', 'Calle 8 #14-22, Barranquilla', 1),
 
-('Miguel ¡ngel Herrera', '1044455566', '3117894561', 'miguel.herrera@email.com', 'Cra 50 #40-60, Bucaramanga', 1),
+('Miguel √Ångel Herrera', '1044455566', '3117894561', 'miguel.herrera@email.com', 'Cra 50 #40-60, Bucaramanga', 1),
 
-('SofÌa Valentina Castro', '1055566677', '3183216547', 'sofia.castro@email.com', 'Calle 25 #18-75, Cartagena', 0);
+('Sof√≠a Valentina Castro', '1055566677', '3183216547', 'sofia.castro@email.com', 'Calle 25 #18-75, Cartagena', 0);
