@@ -67,10 +67,7 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
 
         private void seguridadToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FrmAdminSeguridad seguridad = new FrmAdminSeguridad();
-            seguridad.MdiParent = this;
-            seguridad.Dock = DockStyle.Fill;
-            seguridad.Show();
+            AbrirMdi(new FrmSeguridad());
         }
 
         private void facturasToolStripMenuItem_Click(object sender, EventArgs e)

@@ -16,12 +16,18 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
     {
         public bool EsEdicion = false;
         public int IdUsuario = 0;
+        public int IdEmpleadoSeleccionado { get; set; }
+        public string UsuarioActual { get; set; }
 
         UsuarioBLL usuarioBLL = new UsuarioBLL();
+        private readonly ErrorProvider _errorProvider = new ErrorProvider();
 
         public FrmAdminSeguridad()
         {
             InitializeComponent();
+
+            _errorProvider.ContainerControl = this;
+            _errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -38,6 +44,13 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
             if (EsEdicion)
             {
                 btnActualizar.Text = "Actualizar";
+                txtUsuario.Enabled = false;
+
+                if (IdEmpleadoSeleccionado > 0)
+                    cboEmpleado.SelectedValue = IdEmpleadoSeleccionado;
+
+                if (!string.IsNullOrWhiteSpace(UsuarioActual))
+                    txtUsuario.Text = UsuarioActual;
             }
         }
 
@@ -45,6 +58,26 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
         {
             try
             {
+                _errorProvider.Clear();
+
+                if (cboEmpleado.SelectedValue == null)
+                {
+                    _errorProvider.SetError(cboEmpleado, "Seleccione un empleado.");
+                    return;
+                }
+
+                if (!EsEdicion && string.IsNullOrWhiteSpace(txtUsuario.Text))
+                {
+                    _errorProvider.SetError(txtUsuario, "Ingrese el usuario.");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtClave.Text))
+                {
+                    _errorProvider.SetError(txtClave, "Ingrese la clave.");
+                    return;
+                }
+
                 if (!EsEdicion)
                 {
                     usuarioBLL.InsertarUsuario(
@@ -66,6 +99,7 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
                     MessageBox.Show("Usuario actualizado.");
                 }
 
+                DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)

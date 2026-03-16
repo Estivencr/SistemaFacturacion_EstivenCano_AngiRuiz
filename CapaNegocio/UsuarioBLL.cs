@@ -21,6 +21,27 @@ namespace CapaNegocio
             return usuarioDAL.MostrarEmpleados();
         }
 
+        public DataTable ListarUsuarios()
+        {
+            return usuarioDAL.ListarUsuarios();
+        }
+
+        public DataRow ObtenerUsuarioPorId(int idUsuario)
+        {
+            if (idUsuario <= 0)
+                throw new Exception("Usuario invalido.");
+
+            return usuarioDAL.ObtenerUsuarioPorId(idUsuario);
+        }
+
+        public void CambiarEstado(int idUsuario, bool estado)
+        {
+            if (idUsuario <= 0)
+                throw new Exception("Usuario invalido.");
+
+            usuarioDAL.CambiarEstado(idUsuario, estado);
+        }
+
         public void InsertarUsuario(int idEmpleado, string usuario, string clave)
         {
             if (string.IsNullOrWhiteSpace(usuario))
@@ -41,6 +62,9 @@ namespace CapaNegocio
         {
             if (idUsuario <= 0)
                 throw new Exception("Usuario inválido.");
+
+            if (string.IsNullOrWhiteSpace(clave))
+                throw new Exception("Ingrese la clave.");
 
             string hash = SeguridadHelper.GenerarHash(clave);
 

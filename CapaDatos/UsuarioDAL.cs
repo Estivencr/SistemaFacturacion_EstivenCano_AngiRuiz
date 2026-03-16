@@ -34,6 +34,75 @@ namespace CapaDatos
             return tabla;
         }
 
+        public DataTable ListarUsuarios()
+        {
+            DataTable tabla = new DataTable();
+
+            using (SqlConnection cn = conexion.CrearConexion())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    @"SELECT U.IdUsuario,
+                             U.IdEmpleado,
+                             E.NombreCompleto,
+                             U.Usuario,
+                             U.Rol,
+                             U.Estado,
+                             U.FechaCreacion
+                      FROM Usuarios U
+                      INNER JOIN Empleados E ON U.IdEmpleado = E.IdEmpleado
+                      ORDER BY U.IdUsuario DESC",
+                    cn);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+
+            return tabla;
+        }
+
+        public DataRow ObtenerUsuarioPorId(int idUsuario)
+        {
+            DataTable tabla = new DataTable();
+
+            using (SqlConnection cn = conexion.CrearConexion())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    @"SELECT TOP 1 U.IdUsuario,
+                                     U.IdEmpleado,
+                                     E.NombreCompleto,
+                                     U.Usuario,
+                                     U.Rol,
+                                     U.Estado
+                      FROM Usuarios U
+                      INNER JOIN Empleados E ON U.IdEmpleado = E.IdEmpleado
+                      WHERE U.IdUsuario = @IdUsuario",
+                    cn);
+
+                cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+
+            return tabla.Rows.Count > 0 ? tabla.Rows[0] : null;
+        }
+
+        public void CambiarEstado(int idUsuario, bool estado)
+        {
+            using (SqlConnection cn = conexion.CrearConexion())
+            {
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE Usuarios SET Estado = @Estado WHERE IdUsuario = @IdUsuario",
+                    cn);
+
+                cmd.Parameters.AddWithValue("@Estado", estado);
+                cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public bool ExisteUsuario(string usuario)
         {
             using (SqlConnection cn = conexion.CrearConexion())

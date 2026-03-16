@@ -112,6 +112,9 @@
     <Compile Include="FrmAyuda.Designer.cs">
       <DependentUpon>FrmAyuda.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSeguridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
