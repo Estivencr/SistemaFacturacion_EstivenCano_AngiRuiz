@@ -16,6 +16,11 @@ namespace Pantallas_Sistema_facturación_EstivenCano_AngiRuiz
         {
             InitializeComponent();
 
+            FrmProductos productos = new FrmProductos();
+            productos.MdiParent = this;
+            productos.Dock = DockStyle.Fill;
+            productos.Show();
+
             // En el Designer hay items de menu, pero algunos no estaban conectados.
             facturasToolStripMenuItem.Click += facturasToolStripMenuItem_Click;
             informesToolStripMenuItem.Click += informesToolStripMenuItem_Click;

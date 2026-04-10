@@ -143,20 +143,20 @@
             // seguridadToolStripMenuItem1
             // 
             this.seguridadToolStripMenuItem1.Name = "seguridadToolStripMenuItem1";
-            this.seguridadToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.seguridadToolStripMenuItem1.Size = new System.Drawing.Size(166, 26);
             this.seguridadToolStripMenuItem1.Text = "Seguridad";
             this.seguridadToolStripMenuItem1.Click += new System.EventHandler(this.seguridadToolStripMenuItem1_Click);
             // 
             // rolesToolStripMenuItem
             // 
             this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
-            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.rolesToolStripMenuItem.Text = "Roles";
             // 
             // empleadosToolStripMenuItem
             // 
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.empleadosToolStripMenuItem.Text = "Empleados";
             // 
             // ayudaToolStripMenuItem
